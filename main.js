@@ -31,7 +31,7 @@ var age = [12, 27, 18, 3, 38, 5];
 
 var adults = [];
 for (var i = 0; i < age.length; i++) {
-    if (age[i] > 18) {
+    if (age[i] >= 18) {
         adults.push(age[i]);
     }
 }
