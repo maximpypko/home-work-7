@@ -1,22 +1,43 @@
 // допустим повышает цены на 10 процентов
+// var price = [10, 20, 5, 15];
+
+// var newPrice = price.map(function(element){
+//     return element * 1.1;
+// });
+
+// console.log(newPrice);
+
 var price = [10, 20, 5, 15];
 
-var newPrice = price.map(function(element){
-    return element * 1.1;
-});
-
+var newPrice = [];
+for (var i = 0; i < price.length; i++) {
+    newPrice[i] = price[i] * 1.1;
+}
 console.log(newPrice);
 
-// /////////////////////////////////////////////
 
-//возвращает числа больше 18
+///////////////////////////////////////////////
+
+// //возвращает числа больше 18
+// var age = [12, 27, 18, 3, 38, 5];
+
+// var adults = age.filter(function(element){
+//     return element >= 18;
+// });
+
+// console.log(adults);
+
 var age = [12, 27, 18, 3, 38, 5];
 
-var adults = age.filter(function(element){
-    return element >= 18;
-});
+var adults = [];
+for (var i = 0; i < age.length; i++) {
+    if (age[i] > 18) {
+        adults.push(age[i]);
+    }
+}
 
-console.log(adults);
+console.log(adults)
+
 
 /////////////////////////////////////////////
 
