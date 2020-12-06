@@ -1,46 +1,45 @@
-// допустим повышает цены на 10 процентов
-// var price = [10, 20, 5, 15];
+///////////////////// map ////////////////////
+var map = function (arr, functionCallback) {
+    var resultArr = [];
 
-// var newPrice = price.map(function(element){
-//     return element * 1.1;
-// });
+    for (var i = 0; i < arr.length; i++) {
+        resultArr.push(functionCallback(arr[i], i, arr));
+    }
+    return resultArr;
+};
+//вычисляет остаток от деления на 3
+var price = [5, 10, 15, 4];
 
-// console.log(newPrice);
+var newPrice = map(price, function (element) {
+    return element % 3;
+});
 
-var price = [10, 20, 5, 15];
+console.log(newPrice)
 
-var newPrice = [];
-for (var i = 0; i < price.length; i++) {
-    newPrice[i] = price[i] * 1.1;
+
+///////////////////// filter ////////////////////
+var filter = function (arr, functionCallback) {
+    var result = [];
+     
+    for (var i = 0; i < arr.length; i++) {
+
+        if (functionCallback(arr[i], i, arr)) {
+            result.push(arr[i])
+        }
+    }
+    return result;
 }
-console.log(newPrice);
-
-
-///////////////////////////////////////////////
-
-// //возвращает числа больше 18
-// var age = [12, 27, 18, 3, 38, 5];
-
-// var adults = age.filter(function(element){
-//     return element >= 18;
-// });
-
-// console.log(adults);
-
+//возвращает числа больше или равно 18
 var age = [12, 27, 18, 3, 38, 5];
 
-var adults = [];
-for (var i = 0; i < age.length; i++) {
-    if (age[i] >= 18) {
-        adults.push(age[i]);
-    }
-}
+var adults = filter(age, function(element){
+    return element >= 18;
+});
 
-console.log(adults)
+console.log(adults);
 
 
-/////////////////////////////////////////////
-
+///////////////// reduce/////////////////////
 const notification = [
     {
         date: '31/07/2019',
